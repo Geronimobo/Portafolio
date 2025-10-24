@@ -9,12 +9,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     html { scroll-behavior: smooth; }
-
-    /* ===== Anchor offset fix (no se corta el título bajo el topbar móvil) ===== */
-    :root { --header-h: 64px; }                         /* altura real del topbar móvil */
-    @media (min-width:768px){ :root{ --header-h: 0px; } } /* en desktop el sidebar no tapa */
-    [id]{ scroll-margin-top: var(--header-h); }         /* aplica a #home, #about, #projects, #hobbies, #contact */
-
     /* Dark Teal/Cyan theme */
     :root { --acc: #22d3ee; } /* cyan-400 */
     body { background: #0b1020; color: #e5e7eb; }
@@ -33,11 +27,9 @@
 
   <!-- TOPBAR (mobile) -->
   <aside class="fixed inset-x-0 top-0 z-50 bg-[#0b1020]/80 backdrop-blur border-b border-[#1f2a44] md:hidden">
-    <!-- Altura fija = 64px para que coincida con --header-h -->
-    <div class="h-16 max-w-6xl mx-auto px-4 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#home" class="font-extrabold tracking-tight text-lg text-white">Geronimo<span class="text-cyan-400">Botero</span></a>
-      <!-- Scroll horizontal por si la pantalla es muy angosta -->
-      <nav class="flex items-center gap-5 text-sm overflow-x-auto whitespace-nowrap">
+      <nav class="flex items-center gap-5 text-sm">
         <a class="sidebar-link" href="#about">About</a>
         <a class="sidebar-link" href="#projects">Projects</a>
         <a class="sidebar-link" href="#hobbies">Hobbies</a>
