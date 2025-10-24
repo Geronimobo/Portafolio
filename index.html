@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | Geronimo Botero Laverde</title>
+  <meta name="description" content="Portfolio of Geronimo Botero Laverde: biography, projects, hobbies, and contact." />
+  <script>document.documentElement.classList.add('dark');</script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Dark Teal/Cyan theme */
+    :root { --acc: #22d3ee; } /* cyan-400 */
+    body { background: #0b1020; color: #e5e7eb; }
+    .card { background: #111627; border-color: #1f2a44; }
+    .surface { background: #0f1424; border-color:#1f2a44; }
+    .muted { color: #9ba3b4; }
+    .chip {
+      background: linear-gradient(90deg, rgba(34,211,238,.16), rgba(16,185,129,.16)); /* cyan→emerald */
+      color:#cffafe; /* cyan-100 */
+    }
+    .sidebar-link { color:#9ba3b4; }
+    .sidebar-link:hover { color:#67e8f9; } /* cyan-300 */
+  </style>
+</head>
+<body class="font-sans antialiased">
+
+  <!-- TOPBAR (mobile) -->
+  <aside class="fixed inset-x-0 top-0 z-50 bg-[#0b1020]/80 backdrop-blur border-b border-[#1f2a44] md:hidden">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="font-extrabold tracking-tight text-lg text-white">Geronimo<span class="text-cyan-400">Botero</span></a>
+      <nav class="flex items-center gap-5 text-sm">
+        <a class="sidebar-link" href="#about">About</a>
+        <a class="sidebar-link" href="#projects">Projects</a>
+        <a class="sidebar-link" href="#hobbies">Hobbies</a>
+        <a class="sidebar-link" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- SIDEBAR (desktop) -->
+  <aside class="hidden md:flex fixed left-0 top-0 h-screen w-64 flex-col border-r border-[#1f2a44] bg-[#0b1020]/70 backdrop-blur">
+    <div class="px-5 py-6">
+      <a href="#home" class="block text-2xl font-extrabold text-white">Geronimo<span class="text-cyan-400">Botero</span></a>
+      <p class="mt-1 text-xs muted">Systems Engineering · Java & TypeScript</p>
+    </div>
+
+    <nav class="mt-4 px-5 flex-1 space-y-1 text-sm">
+      <a class="sidebar-link block px-3 py-2 rounded hover:bg-white/5" href="#home">Home</a>
+      <a class="sidebar-link block px-3 py-2 rounded hover:bg-white/5" href="#about">About</a>
+      <a class="sidebar-link block px-3 py-2 rounded hover:bg-white/5" href="#projects">Projects</a>
+      <a class="sidebar-link block px-3 py-2 rounded hover:bg-white/5" href="#hobbies">Hobbies</a>
+      <a class="sidebar-link block px-3 py-2 rounded hover:bg-white/5" href="#contact">Contact</a>
+    </nav>
+
+    <div class="px-5 pb-6 mt-auto text-xs muted">
+      <div class="surface border rounded-2xl p-3">
+        <p>Open to internships & collabs.</p>
+        <a class="inline-block mt-2 text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="mailto:gerobote@hotmail.com">Email me</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="md:pl-64">
+    <!-- HERO -->
+    <section id="home" class="pt-16 md:pt-10">
+      <div class="max-w-5xl mx-auto px-4 py-10">
+        <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 items-center">
+          <div>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-white">
+              Hi, I'm <span class="text-cyan-400">Geronimo Botero Laverde</span>.
+            </h1>
+            <p class="mt-3 text-lg muted">
+              Systems Engineering Student / Java & TypeScript Developer
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#projects" class="inline-flex items-center rounded-xl px-5 py-3 bg-cyan-500 text-[#0b1020] hover:bg-cyan-400 transition">Explore my work</a>
+              <a href="#contact" class="inline-flex items-center rounded-xl px-5 py-3 border border-[#1f2a44] text-white hover:border-cyan-400 hover:text-cyan-300 transition">Contact</a>
+            </div>
+
+            <!-- quick facts -->
+            <ul class="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+              <li class="surface border rounded-2xl p-3">
+                <div class="text-slate-300">Location</div>
+                <div class="text-white font-semibold mt-1">Medellín, CO</div>
+              </li>
+              <li class="surface border rounded-2xl p-3">
+                <div class="text-slate-300">Focus</div>
+                <div class="text-white font-semibold mt-1">Backend · Frontend</div>
+              </li>
+              <li class="surface border rounded-2xl p-3">
+                <div class="text-slate-300">Stack</div>
+                <div class="text-white font-semibold mt-1">Java, TS, Node</div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- portrait -->
+          <div class="flex justify-center">
+            <div class="w-64 md:w-80 h-80 md:h-96 surface rounded-3xl border flex items-center justify-center">
+              <img src="./assets/headshot.jpg" alt="Headshot of Geronimo Botero Laverde" width="294" height="368" class="max-w-full max-h-full object-contain rounded-2xl" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-12 border-t border-[#1f2a44]">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-white">About</h2>
+        <p class="mt-4 leading-8 muted">
+          My name is Geronimo Botero. I was born on December 21, 2005 in Medellin, Colombia. I graduated from The Columbus School in 2024 and entered EIA University shortly after. I study Systems Engineering and I'm currently in my third semester. I've always been fascinated by technology—building PCs, video games, how AI works, and more. Beyond tech, I'm also deeply interested in literature, philosophy, music, and film. I'm a dedicated person who strives to solve problems as efficiently as possible without leaving solutions half-done.
+        </p>
+
+        <ol class="relative mt-8 space-y-8">
+          <li class="pl-8">
+            <span class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-cyan-400"></span>
+            <h3 class="text-lg font-semibold text-white">Education</h3>
+            <p class="muted mt-1">Graduated from The Columbus School at 18 (2024); one month later I started Systems Engineering at EIA University. Currently in 3rd semester at age 19.</p>
+          </li>
+          <li class="pl-8">
+            <span class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-cyan-400"></span>
+            <h3 class="text-lg font-semibold text-white">Skills</h3>
+            <p class="muted mt-1">Java, TypeScript, Python, Neo4j, SQL, C++</p>
+          </li>
+          <li class="pl-8">
+            <span class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-cyan-400"></span>
+            <h3 class="text-lg font-semibold text-white">Experience</h3>
+            <p class="muted mt-1">Most of my experience comes from my studies and the various projects I have built in class. I have also taken courses in Data Science, AI, and Data Structures.</p>
+          </li>
+          <li class="pl-8">
+            <span class="absolute left-1.5 top-1.5 w-3 h-3 rounded-full bg-cyan-400"></span>
+            <h3 class="text-lg font-semibold text-white">Languages</h3>
+            <p class="muted mt-1">Native Spanish; bilingual high school—graduated with C2 English diploma.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- PROJECTS (horizontal cards) -->
+    <section id="projects" class="py-12 border-t border-[#1f2a44]">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="flex items-end justify-between gap-4">
+          <h2 class="text-3xl font-bold text-white">Projects</h2>
+        </div>
+
+        <div class="mt-8 space-y-6">
+
+          <!-- AUTH0 -->
+          <article class="card border rounded-2xl overflow-hidden hover:-translate-y-0.5 hover:shadow transition">
+            <div class="grid md:grid-cols-[1.2fr_1.5fr]">
+              <div class="surface border-r border-[#1f2a44] flex items-center justify-center p-4">
+                <div class="w-full h-56 md:h-64 rounded-lg overflow-hidden flex items-center justify-center">
+                  <img src="./assets/auth0_1.png" alt="AUTH0 DEMO screenshot" width="1536" height="1046" class="max-w-full max-h-full object-contain" loading="lazy" />
+                </div>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-white">AUTH0 DEMO</h3>
+                <p class="text-sm muted">
+                  A demonstration of how Auth0 works combined with Express (Node.js) to implement login, a protected route, and a protected API endpoint using the official express-openid-connect SDK.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="chip px-2 py-1 rounded-full">JavaScript</span>
+                  <span class="chip px-2 py-1 rounded-full">Node.js</span>
+                  <span class="chip px-2 py-1 rounded-full">Express</span>
+                  <span class="chip px-2 py-1 rounded-full">Auth0</span>
+                </div>
+                <p class="text-sm text-slate-200">
+                  <strong>Role:</strong> Created the demo project, configured Auth0 (tenant, application, callback/logout URLs), set up the Express server, protected routes (/profile, /api/me), and demonstrated the login/logout flow.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-1 items-center text-sm">
+                  <span class="muted" title="Local only">http://localhost:3000 — local version (no public deployment)</span>
+                  <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://github.com/Geronimobo/AUTH0-DEMO" target="_blank" rel="noopener">Repository</a>
+                  <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://drive.google.com/file/d/1rJyVO4Njdo9OqLpUotiAeCTJRW0MjitP/view?usp=sharing" target="_blank" rel="noopener">Video</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- WEATHER -->
+          <article class="card border rounded-2xl overflow-hidden hover:-translate-y-0.5 hover:shadow transition">
+            <div class="grid md:grid-cols-[1.2fr_1.5fr]">
+              <div class="surface border-r border-[#1f2a44] flex items-center justify-center p-4">
+                <div class="w-full h-56 md:h-64 rounded-lg overflow-hidden flex items-center justify-center">
+                  <img src="./assets/weatherapp_1.png" alt="Mini-Weather App" width="2048" height="1223" class="max-w-full max-h-full object-contain" loading="lazy" />
+                </div>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-white">Mini-Weather App (Next.js 14 + TS + Tailwind)</h3>
+                <p class="text-sm muted">
+                  Practical app that uses the Open-Meteo API to display the current weather and a 3-day forecast, with city search, favorites, and hourly view up to 72 hours.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="chip px-2 py-1 rounded-full">TypeScript</span>
+                  <span class="chip px-2 py-1 rounded-full">Next.js 14</span>
+                  <span class="chip px-2 py-1 rounded-full">Tailwind CSS</span>
+                </div>
+                <p class="text-sm text-slate-2 00">
+                  <strong>Role:</strong> End-to-end development — debounced city search, favorites with localStorage, accessible UI with loading/error states, API integration, and deployment on Vercel.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-1 items-center text-sm">
+                  <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://mini-app-clima.vercel.app/" target="_blank" rel="noopener">Live demo</a>
+                  <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://github.com/Geronimobo/MINI-APP-CLIMA" target="_blank" rel="noopener">Repository</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- JUAN-SAO -->
+          <article class="card border rounded-2xl overflow-hidden hover:-translate-y-0.5 hover:shadow transition">
+            <div class="grid md:grid-cols-[1.2fr_1.5fr]">
+              <div class="surface border-r border-[#1f2a44] flex items-center justify-center p-4">
+                <div class="w-full h-56 md:h-64 rounded-lg overflow-hidden flex items-center justify-center">
+                  <img src="./assets/juansao_1.png" alt="Swagger UI - JUAN-SAO Backend" width="2048" height="1167" class="max-w-full max-h-full object-contain" loading="lazy" />
+                </div>
+              </div>
+              <div class="p-6 space-y-3">
+                <h3 class="text-xl font-semibold text-white">JUAN-SAO Backend</h3>
+                <p class="text-sm muted">
+                  Backend developed for the “JUAN SAO” project — implements server logic, data management, API routes, authentication/authorization (if applicable), and database connectivity.
+                </p>
+                <div class="flex flex-wrap gap-2 text-xs">
+                  <span class="chip px-2 py-1 rounded-full">Node.js</span>
+                  <span class="chip px-2 py-1 rounded-full">Express</span>
+                  <span class="chip px-2 py-1 rounded-full">MongoDB</span>
+                </div>
+                <p class="text-sm text-slate-200">
+                  <strong>Role:</strong> Designed backend architecture, implemented REST endpoints, integrated the database, created models/controllers, ensured quality (tests), and documented the API.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-1 items-center text-sm">
+                  <span class="muted">http://localhost:3000/docs — local version (no public deployment)</span>
+                  <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://github.com/Geronimobo/JUAN-SAO-BACKEND" target="_blank" rel="noopener">Repository</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies" class="py-12 border-t border-[#1f2a44]">
+      <div class="max-w-5xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-white">Hobbies</h2>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Gym -->
+          <figure class="card rounded-2xl overflow-hidden border">
+            <div class="w-full h-64 surface rounded-b-none border-b border-[#1f2a44] overflow-hidden flex items-center justify-center">
+              <img src="./assets/hobby_gym.jpg" alt="Gym" width="1536" height="2048" class="max-w-full max-h-full object-contain" loading="lazy" />
+            </div>
+            <figcaption class="p-4 text-sm muted">
+              <strong class="text-slate-200">Gym —</strong> I go to the gym five times a week, focusing on hypertrophy and weightlifting.
+            </figcaption>
+          </figure>
+
+          <!-- Cycling (taller card) -->
+          <figure class="card rounded-2xl overflow-hidden border lg:row-span-2">
+            <div class="w-full h-80 surface rounded-b-none border-b border-[#1f2a44] overflow-hidden flex items-center justify-center">
+              <img src="./assets/hobby_cycling.jpg" alt="Cycling" width="1500" height="2000" class="max-w-full max-h-full object-contain" loading="lazy" />
+            </div>
+            <figcaption class="p-4 text-sm muted">
+              <strong class="text-slate-200">Cycling —</strong> I ride twice a week, sometimes on a trainer and sometimes outdoors.
+            </figcaption>
+          </figure>
+
+          <!-- Reading -->
+          <figure class="card rounded-2xl overflow-hidden border">
+            <div class="w-full h-64 surface rounded-b-none border-b border-[#1f2a44] overflow-hidden flex items-center justify-center">
+              <img src="./assets/hobby_reading.jpg" alt="Reading" width="1536" height="2048" class="max-w-full max-h-full object-contain" loading="lazy" />
+            </div>
+            <figcaption class="p-4 text-sm muted">
+              <strong class="text-slate-200">Reading —</strong> I love reading, from philosophy to world literature.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-12 border-t border-[#1f2a44]">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-white">Contact</h2>
+        <ul class="mt-4 space-y-2">
+          <li>📧 Email: <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="mailto:gerobote@hotmail.com">gerobote@hotmail.com</a></li>
+          <li>💼 LinkedIn: <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://www.linkedin.com/in/geronimo-botero-881049392" target="_blank" rel="noopener">https://www.linkedin.com/in/geronimo-botero-881049392</a></li>
+          <li>🐙 GitHub: <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://github.com/Geronimobo" target="_blank" rel="noopener">https://github.com/Geronimobo</a></li>
+          <li>📷 Instagram: <a class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2" href="https://instagram.com/geronimobo_" target="_blank" rel="noopener">@geronimobo_</a></li>
+        </ul>
+
+        <form id="contactForm" class="mt-8 grid gap-4 card p-6 rounded-2xl border"
+              action="https://formspree.io/f/TU_ENDPOINT" method="POST">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm mb-1 muted" for="name">Name</label>
+              <input class="w-full rounded-xl border border-[#1f2a44] bg-[#0b1020] text-slate-200 px-3 py-2" id="name" name="name" type="text" required />
+            </div>
+            <div>
+              <label class="block text-sm mb-1 muted" for="emailInput">Email</label>
+              <input class="w-full rounded-xl border border-[#1f2a44] bg-[#0b1020] text-slate-200 px-3 py-2" id="emailInput" name="email" type="email" required />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm mb-1 muted" for="message">Message</label>
+            <textarea class="w-full min-h-[120px] rounded-xl border border-[#1f2a44] bg-[#0b1020] text-slate-200 px-3 py-2" id="message" name="message" required></textarea>
+          </div>
+          <div class="flex items-center gap-3">
+            <button class="rounded-xl px-5 py-3 bg-cyan-500 text-[#0b1020] hover:bg-cyan-400 transition" type="submit">Send</button>
+            <span id="formStatus" class="text-sm muted"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="py-10 text-center text-sm muted">
+      Built by Geronimo Botero Laverde · © <span id="year"></span>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('formStatus');
+    form.addEventListener('submit', async (e) => {
+      const action = form.getAttribute('action');
+      if (!action || action.includes('TU_ENDPOINT')) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('emailInput').value;
+        const message = document.getElementById('message').value;
+        const body = encodeURIComponent(`Name: ${name}%0AEmail: ${email}%0A%0A${message}`);
+        window.location.href = `mailto:gerobote@hotmail.com?subject=Portfolio%20Contact&body=${body}`;
+        return;
+      }
+      e.preventDefault();
+      statusEl.textContent = 'Sending...';
+      try {
+        const data = new FormData(form);
+        const res = await fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+        statusEl.textContent = res.ok ? 'Thanks! I will reply soon.' : 'There was an error. Please email me directly.';
+        if (res.ok) form.reset();
+      } catch (err) {
+        statusEl.textContent = 'Offline. Try again or email me directly.';
+      }
+    });
+  </script>
+</body>
+</html>
