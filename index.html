@@ -10,11 +10,6 @@
   <style>
     html { scroll-behavior: smooth; }
 
-    /* Offset CSS (algunos navegadores lo respetan, otros no; lo reforzamos con JS) */
-    :root { --header-h: 64px; }
-    @media (min-width:768px){ :root{ --header-h: 0px; } }
-    [id]{ scroll-margin-top: var(--header-h); }
-
     /* Dark Teal/Cyan theme */
     :root { --acc: #22d3ee; } /* cyan-400 */
     body { background: #0b1020; color: #e5e7eb; }
@@ -22,18 +17,17 @@
     .surface { background: #0f1424; border-color:#1f2a44; }
     .muted { color: #9ba3b4; }
     .chip {
-      background: linear-gradient(90deg, rgba(34,211,238,.16), rgba(16,185,129,.16));
-      color:#cffafe;
+      background: linear-gradient(90deg, rgba(34,211,238,.16), rgba(16,185,129,.16)); /* cyan→emerald */
+      color:#cffafe; /* cyan-100 */
     }
     .sidebar-link { color:#9ba3b4; }
-    .sidebar-link:hover { color:#67e8f9; }
+    .sidebar-link:hover { color:#67e8f9; } /* cyan-300 */
   </style>
 </head>
 <body class="font-sans antialiased">
 
-  <!-- TOPBAR (mobile) -->
-  <aside class="fixed inset-x-0 top-0 z-50 bg-[#0b1020]/80 backdrop-blur border-b border-[#1f2a44] md:hidden">
-    <!-- Altura fija = 64px para que coincida con --header-h -->
+  <!-- TOPBAR (mobile, ahora NO fijo) -->
+  <aside class="bg-[#0b1020]/80 border-b border-[#1f2a44] md:hidden">
     <div class="h-16 max-w-6xl mx-auto px-4 flex items-center justify-between">
       <a href="#home" class="font-extrabold tracking-tight text-lg text-white">Geronimo<span class="text-cyan-400">Botero</span></a>
       <nav class="flex items-center gap-5 text-sm overflow-x-auto whitespace-nowrap">
@@ -71,7 +65,7 @@
   <!-- MAIN -->
   <main class="md:pl-64">
     <!-- HERO -->
-    <section id="home" class="pt-16 md:pt-10">
+    <section id="home" class="pt-6 md:pt-10">
       <div class="max-w-5xl mx-auto px-4 py-10">
         <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 items-center">
           <div>
@@ -354,36 +348,6 @@
         if (res.ok) form.reset();
       } catch (err) {
         statusEl.textContent = 'Offline. Try again or email me directly.';
-      }
-    });
-
-    // ===== Anchor offset JS (soluciona 100% en iOS/Android) =====
-    function headerHeight() {
-      return window.innerWidth < 768 ? 64 : 0; // px
-    }
-    function smoothScrollToId(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const y = el.getBoundingClientRect().top + window.pageYOffset - headerHeight();
-      window.scrollTo({ top: y, behavior: 'smooth' });
-    }
-    // Intercepta clicks en anclas internas
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', (e) => {
-        const id = a.getAttribute('href').slice(1);
-        if (!id) return;
-        const target = document.getElementById(id);
-        if (!target) return;
-        e.preventDefault();
-        smoothScrollToId(id);
-        // Opcional: cerrar menus si tuvieras uno móvil desplegable
-      });
-    });
-    // Si la página abre con hash (ej. /#contact), aplica offset
-    window.addEventListener('load', () => {
-      if (location.hash) {
-        const id = location.hash.slice(1);
-        setTimeout(() => smoothScrollToId(id), 0);
       }
     });
   </script>
